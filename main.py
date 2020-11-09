@@ -18,15 +18,18 @@ def play():
 
     while not attempts > 0:
 
-        validAttempt = False
-        while not validAttempt:
+        validateAttempt = True
+        while validateAttempt:
             guess = input("Guess a character: ").upper()
             if len(guess) == 1 and guess.isalpha():
-                validAttempt = True
+
+                for char in coveredWord:
+                    if char == guess:
+                        validateAttempt = False
+                        print("Guess has already been attempted!")
             else:
+                validateAttempt = False
                 print("Invalid attempt! Provide a character value for a valid attempt.")
-
-
 
 
 play()
