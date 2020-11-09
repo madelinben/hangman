@@ -12,24 +12,34 @@ def getWord():
 
 
 def play():
-    attempts = 6
+    attemptCount = 6
+    guessedCorrectly = False
+
     selectedWord = getWord()
     coveredWord = "_" * len(selectedWord)
 
-    while not attempts > 0:
+    while not guessedCorrectly and attemptCount > 0:
 
         validateAttempt = True
         while validateAttempt:
             guess = input("Guess a character: ").upper()
             if len(guess) == 1 and guess.isalpha():
-
                 for char in coveredWord:
                     if char == guess:
                         validateAttempt = False
                         print("Guess has already been attempted!")
             else:
                 validateAttempt = False
-                print("Invalid attempt! Provide a character value for a valid attempt.")
+                print("Provide a character value for a valid attempt!")
+
+
+
+        if coveredWord == selectedWord:
+            print("Congratulations! You've correctly guessed the covered word!")
+            guessedCorrectly = True
+            break
+
+        attemptCount -= 1
 
 
 play()
