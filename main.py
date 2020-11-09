@@ -13,13 +13,20 @@ def getWord():
 
 def play():
     attempts = 6
-    finished = False
-
     selectedWord = getWord()
-    guessWord = "_" * len(selectedWord)
+    coveredWord = "_" * len(selectedWord)
 
-    while not finished:
-        finished = True
+    while not attempts > 0:
+
+        validAttempt = False
+        while not validAttempt:
+            guess = input("Guess a character: ").upper()
+            if len(guess) == 1 and guess.isalpha():
+                validAttempt = True
+            else:
+                print("Invalid attempt! Provide a character value for a valid attempt.")
+
+
 
 
 play()
