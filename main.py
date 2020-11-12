@@ -22,7 +22,7 @@ def play():
     previousGuesses = []
 
     while not guessedCorrectly and attemptCount > 0:
-        print("".join(coveredWord) + "\n" + selectedWord)
+        print("Attempts Left: " + str(attemptCount) + "\nCovered Word: " + "".join(coveredWord) + "\t" + selectedWord)
         guess = input("Guess a character: ").upper()
 
         if len(guess) == 1 and guess.isalpha():
