@@ -49,5 +49,17 @@ def play():
         print(
             "Unlucky! You've run out of attempts and not guessed the covered word.\nThe word you were guessing was " + selectedWord + "!")
 
+    valid = False
+    while not valid:
+        userInput = input("Play again [y/n]").lower()
+        if userInput == "y":
+            valid = True
+            play()
+        elif userInput == "n":
+            valid = True
+            quit()
+        else:
+            print("Error! Value must be either y/n")
+
 
 play()

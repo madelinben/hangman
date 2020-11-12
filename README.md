@@ -11,3 +11,5 @@ with the Player attempting one letter at a time.***
 * [x] Validate whether an attempt is a single char and has not previously been made.
 * [x] Guessed characters are validated and uncovered to the user.
 * [x] Break game loop and confirm whether the covered word was guessed correctly.
+* [x] Display attempt count and visual hangman to user.
+* [x] Ask the user whether they'd like to play again on exit.
